@@ -4,8 +4,8 @@ namespace Projeto_Pizzaria.Models.Interface
 {
     public interface IEntidade
     {
-         DateTime DataAlteracao { get; set; }
-         DateTime DataCadastro { get; set; }
-         int Id { get; set; }
+         DateTime DataAlteracao { get;}
+         DateTime DataCadastro { get;}
+         int Id { get;}
     }
 }
