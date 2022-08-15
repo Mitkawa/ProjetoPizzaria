@@ -12,6 +12,7 @@ namespace Projeto_Pizzaria.Models
             FotoURL = fotoURL;
             Preco = preco;
             TamanhoId = tamanhoid;
+            
             DataCadastro = DateTime.Now;
             DataAlteracao = DataCadastro;
         }

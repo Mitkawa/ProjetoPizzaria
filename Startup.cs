@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Projeto_Pizzaria.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +22,12 @@ namespace Projeto_Pizzaria
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<PizzariaDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
+
             services.AddControllersWithViews();
         }
 
