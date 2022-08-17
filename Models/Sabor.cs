@@ -6,9 +6,8 @@ namespace Projeto_Pizzaria.Models
 {
     public class Sabor : IEntidade
     {
-        public Sabor(int id, string nome, string fotoUrl)
+        public Sabor(string nome, string fotoUrl)
         {
-            Id = id;
             Nome = nome;
             FotoUrl = fotoUrl;
             DataCadastro = DateTime.Now;

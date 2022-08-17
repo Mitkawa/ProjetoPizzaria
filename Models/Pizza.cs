@@ -8,13 +8,12 @@ namespace Projeto_Pizzaria.Models
     {
         public Pizza(string nome, string fotoURL, decimal preco, int tamanhoid)
         {
+            DataAlteracao = DateTime.Now;
+            DataCadastro = DateTime.Now;
+            TamanhoId = tamanhoid;
             Nome = nome;
             FotoURL = fotoURL;
             Preco = preco;
-            TamanhoId = tamanhoid;
-            
-            DataCadastro = DateTime.Now;
-            DataAlteracao = DataCadastro;
         }
 
         public DateTime DataAlteracao { get; private set; }
@@ -22,7 +21,7 @@ namespace Projeto_Pizzaria.Models
         public int Id { get;  private set; }
         public string Nome { get; private set; }
         public string FotoURL { get; private set; }
-        public Decimal Preco { get; private set; }
+        public decimal Preco { get; private set; }
 
         #region relacionamentos 
 
