@@ -23,21 +23,6 @@ namespace Projeto_Pizzaria.Controllers
 
         public IActionResult Criar() => View();
 
-
-
-        public IActionResult Detalhes(int id)
-        {
-            var resultado = _context.Pizzas
-                .Include(ps => ps.PizzasSabores)
-                .ThenInclude(p => p.Pizza)
-                .FirstOrDefault(pizza => pizza.Id == id);
-
-            if (resultado == null)
-                return View("NotFound");
-
-            return View(resultado);
-        }
-
         [HttpPost]
         public IActionResult Criar(PostPizzaDTO pizzadto)
         {
@@ -67,6 +52,85 @@ namespace Projeto_Pizzaria.Controllers
 
             return View();
         }
+
+        public IActionResult Atualizar(int id) 
+        {
+            var search = _context.Pizzas.Include(x=>x.PizzasSabores).ThenInclude(x=>x.Sabor).FirstOrDefault(x=> x.Id== id);
+
+            if (search == null) 
+                return View("NotFound");
+
+            var response = new PostPizzaDTO()
+            {
+                Nome = search.Nome,
+                FotoURL = search.FotoURL,
+                Preco = search.Preco,
+                TamanhoId = search.TamanhoId,
+                SaborId = search.PizzasSabores.Select(x=>x.SaborId).ToList()
+            };
+
+            DadosDropdown();
+
+            return View(response);
+        }
+
+        [HttpPost]
+        public IActionResult Atualizar(int id, PostPizzaDTO pizzaDTO)
+        {
+            var search = _context.Pizzas.FirstOrDefault(x => x.Id == id);
+
+            if(!ModelState.IsValid)
+            {
+                DadosDropdown();
+                return View(search);
+            }
+
+            search.AtualizarDados
+                (
+                pizzaDTO.Nome=search.Nome,
+                pizzaDTO.FotoURL=search.FotoURL,
+                pizzaDTO.Preco=search.Preco,
+                pizzaDTO.TamanhoId=search.TamanhoId
+                );
+
+            _context.Update(search);
+            _context.SaveChanges();
+
+            return  RedirectToAction(nameof(Detalhes),search);
+
+        }
+
+        public IActionResult Deletar(int id) 
+        {
+            var search = _context.Pizzas.FirstOrDefault(x => x.Id == id);
+
+            if (search == null)
+                return View("NotFound");
+
+
+
+            return View(search);
+        }
+
+        [HttpPost, ActionName("Deletar")]
+        public IActionResult ConfirmarDeletar(int id) 
+        {
+            var result = _context.Pizzas.FirstOrDefault(x=>x.Id==id);
+
+            _context.Remove(result);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Detalhes(int id) 
+        {
+            var result = _context.Pizzas.Include(t => t.TamanhoId).Include(ps => ps.PizzasSabores).ThenInclude(s => s.Sabor).FirstOrDefault(p=>p.Id==id);
+
+            return View(result);
+        }
+        
+
         public void DadosDropdown()
         {
             var resp = new PostPizzaDropdownDTO()
