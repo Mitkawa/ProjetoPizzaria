@@ -10,11 +10,11 @@ using Projeto_Pizzaria.Models;
 
 namespace Projeto_Pizzaria.Controllers
 {
-    public class PizzasContoller : Controller
+    public class PizzasController : Controller
     {
         private PizzariaDbContext _context;
 
-        public PizzasContoller(PizzariaDbContext context)
+        public PizzasController(PizzariaDbContext context)
         {
             _context = context;
         }
@@ -33,11 +33,10 @@ namespace Projeto_Pizzaria.Controllers
             }
 
             Pizza pizza = new Pizza
-                (
+                (                
                     pizzadto.Nome,
                     pizzadto.FotoURL,
-                    pizzadto.Preco,
-                    pizzadto.TamanhoId
+                    pizzadto.Preco
                 ); 
 
             _context.Add(pizza);

@@ -2,7 +2,7 @@
 
 namespace Projeto_Pizzaria.Migrations
 {
-    public partial class correção : Migration
+    public partial class CORRECAO : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

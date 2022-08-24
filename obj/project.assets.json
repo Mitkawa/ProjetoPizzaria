@@ -5799,24 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gabriel\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\mrfok\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel\\Source\\Repos\\ProjetoPizzaria\\Projeto-Pizzaria.csproj",
+      "projectUniqueName": "C:\\Users\\mrfok\\OneDrive - SENAC - SP\\Área de Trabalho\\PROJETOMITKAWA\\Projeto-Pizzaria.csproj",
       "projectName": "Projeto-Pizzaria",
-      "projectPath": "C:\\Users\\Gabriel\\Source\\Repos\\ProjetoPizzaria\\Projeto-Pizzaria.csproj",
-      "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel\\Source\\Repos\\ProjetoPizzaria\\obj\\",
+      "projectPath": "C:\\Users\\mrfok\\OneDrive - SENAC - SP\\Área de Trabalho\\PROJETOMITKAWA\\Projeto-Pizzaria.csproj",
+      "packagesPath": "C:\\Users\\mrfok\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mrfok\\OneDrive - SENAC - SP\\Área de Trabalho\\PROJETOMITKAWA\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\mrfok\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

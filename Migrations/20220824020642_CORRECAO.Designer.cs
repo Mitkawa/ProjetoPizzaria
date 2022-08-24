@@ -10,8 +10,8 @@ using Projeto_Pizzaria.Data;
 namespace Projeto_Pizzaria.Migrations
 {
     [DbContext(typeof(PizzariaDbContext))]
-    [Migration("20220816225547_inicial")]
-    partial class inicial
+    [Migration("20220824020642_CORRECAO")]
+    partial class CORRECAO
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

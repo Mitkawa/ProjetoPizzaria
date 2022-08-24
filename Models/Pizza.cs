@@ -6,11 +6,10 @@ namespace Projeto_Pizzaria.Models
 {
     public class Pizza : IEntidade
     {
-        public Pizza(string nome, string fotoURL, decimal preco, int tamanhoid)
+        public Pizza(string nome, string fotoURL, decimal preco)
         {
             DataAlteracao = DateTime.Now;
             DataCadastro = DateTime.Now;
-            TamanhoId = tamanhoid;
             Nome = nome;
             FotoURL = fotoURL;
             Preco = preco;

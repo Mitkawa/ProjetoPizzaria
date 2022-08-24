@@ -17,11 +17,9 @@ namespace Projeto_Pizzaria.Models.ViewsModels.RequestDTO
         [Display(Name = "Preço")]
         [Required(ErrorMessage = "O preço é obrigatório!")]
         public decimal Preco { get;  set; }
-        [Display(Name = "Produtor")]
-        [Required(ErrorMessage = "O produtor é obrigatório!")]
+
         public int TamanhoId { get; set; }
-        [Display(Name = "Sabor")]
-        [Required(ErrorMessage = "O sabor é obrigatório!")]
+
         public List<int> SaborId { get; set; }
         
     }
