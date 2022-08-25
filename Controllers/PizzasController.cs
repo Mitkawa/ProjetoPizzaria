@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Projeto_Pizzaria.Models;
+using System.IO.Pipes;
 
 namespace Projeto_Pizzaria.Controllers
 {
@@ -125,7 +126,7 @@ namespace Projeto_Pizzaria.Controllers
 
         public IActionResult Detalhes(int id) 
         {
-            var result = _context.Pizzas.Include(t => t.TamanhoId).Include(ps => ps.PizzasSabores).ThenInclude(s => s.Sabor).FirstOrDefault(p=>p.Id==id);
+            var result = _context.Pizzas.Include(t => t.Tamanho).Include(ps => ps.PizzasSabores).ThenInclude(s => s.Sabor).FirstOrDefault(p=>p.Id==id);
 
             return View(result);
         }
