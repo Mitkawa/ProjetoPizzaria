@@ -6,13 +6,19 @@ namespace Projeto_Pizzaria.Models
 {
     public class Pizza : IEntidade
     {
-        public Pizza(string nome, string fotoURL, decimal preco)
+        public Pizza()
+        {
+
+        }
+
+        public Pizza(string nome, string fotoURL, decimal preco, int tamanhoid)
         {
             DataAlteracao = DateTime.Now;
             DataCadastro = DateTime.Now;
             Nome = nome;
             FotoURL = fotoURL;
             Preco = preco;
+            TamanhoId = tamanhoid;
         }
 
         public DateTime DataAlteracao { get; private set; }

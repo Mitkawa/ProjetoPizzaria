@@ -57,6 +57,7 @@ namespace Projeto_Pizzaria
                     name: "default",
                     pattern: "{controller=Pizzas}/{action=Index}/{id?}");
             });
+            
         }
     }
 }

@@ -33,11 +33,12 @@ namespace Projeto_Pizzaria.Controllers
             }
 
             Pizza pizza = new Pizza
-                (                
+                (
                     pizzadto.Nome,
                     pizzadto.FotoURL,
-                    pizzadto.Preco
-                ); 
+                    pizzadto.Preco,
+                    pizzadto.TamanhoId
+                ) ; 
 
             _context.Add(pizza);
             _context.SaveChanges();
